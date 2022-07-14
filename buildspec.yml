@@ -4,7 +4,7 @@ phases:
     commands:
       - sudo apt-add-repository ppa:linuxuprising/java
       - sudo apt-get update -y
-      - sudo apt-get install openjdk-14-jdk
+      - sudo apt-get install openjdk-14-jdk -y
       - sudo apt-get install maven -y
       - sudo java --version
       
