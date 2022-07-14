@@ -2,9 +2,9 @@ version: 0.2
 phases:
   install:
     commands:
-      - apt-get update -y
-      - sudo apt-get install -y openjdk-13-jdk
-      - apt-get install -y maven
+      - sudo apt-add-repository ppa:linuxuprising/java
+      - sudo apt-get update
+      - sudo apt-get install oracle-java11-installe
       - java -version
       
        
