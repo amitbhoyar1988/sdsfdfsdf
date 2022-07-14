@@ -3,12 +3,13 @@ phases:
   install:
     commands:
       - yum update -y
-      - yum install git -y
-      - sudo amazon-linux-extras install java-openjdk11 -y
-      - sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
-      - sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+      - amazon-linux-extras install java-openjdk11 -y
+      - wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+      - sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
       - yum install -y apache-maven
       - mvn --version
+    runtime-versions:
+      java: corretto11
      
   pre_build:
     commands:
