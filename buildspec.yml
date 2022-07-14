@@ -8,9 +8,7 @@ phases:
       - sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
       - yum install -y apache-maven
       - mvn --version
-    runtime-versions:
-      java: corretto11
-     
+       
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
