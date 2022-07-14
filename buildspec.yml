@@ -4,21 +4,12 @@ phases:
     commands:
       - yum update -y
       - yum install git -y
-      - sudo yum install -y curl
-      - curl -O https://download.java.net/java/GA/jdk13/5b8a42f3905b406298b72d750b6919f6/33/GPL/openjdk-13_linux-x64_bin.tar.gz
-      - tar xvf openjdk-13_linux-x64_bin.tar.gz
-      - sudo mv jdk-13 /opt/
-      - sudo tee /etc/profile.d/jdk13.sh
-      - export JAVA_HOME=/opt/jdk-13
-      - export PATH=\$PATH:\$JAVA_HOME/bin
-      - source /etc/profile.d/jdk13.sh
+      - sudo amazon-linux-extras install java-openjdk11 -y
       - sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
       - sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
       - yum install -y apache-maven
       - mvn --version
-      
-    
-    
+     
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
