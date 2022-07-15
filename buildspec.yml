@@ -9,7 +9,7 @@ phases:
       - sudo mvn --version
       
      runtime-versions:
-        java: corretto13
+        java: corretto8
       
   pre_build:
     commands:
