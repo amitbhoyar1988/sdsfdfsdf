@@ -19,7 +19,7 @@ phases:
       - echo Build started on `date`
       - mvn install
       - docker login --username "abhoyar9" --password "Amit@1988"
-      - docker build -t xyz .
+      - docker build .
       - docker push abhoyar9/ashwini
       
 
