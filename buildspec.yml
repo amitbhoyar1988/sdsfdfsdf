@@ -18,7 +18,8 @@ phases:
     commands:
       - echo Build started on `date`
       - mvn install
-artifacts:
-  files:
-      - '**/*'
-  base-directory: 'target/*'
+      - docker login --username "abhoyar9" --password "Amit@1988"
+      - docker build -t xyz .
+      - docker push abhoyar9/ashwini
+      
+
