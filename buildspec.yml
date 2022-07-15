@@ -20,5 +20,5 @@ phases:
       - mvn install
 artifacts:
   files:
-    - '/*.jar'
-   
+      - '**/*'
+  base-directory: 'target/*'
