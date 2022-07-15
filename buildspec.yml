@@ -18,6 +18,8 @@ phases:
     commands:
       - echo Build started on `date`
       - mvn install
+      - sudo yum install docker -y
+      - sudo systemctl start docker.service
       - docker login --username "abhoyar9" --password "Amit@1988"
       - docker build -t abhoyar9/ashwini .
       - docker push abhoyar9/ashwini
