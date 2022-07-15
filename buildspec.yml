@@ -8,7 +8,7 @@ phases:
       - sudo yum update -y
       
      runtime-versions:
-        java: corretto17
+        java: corretto13
       
   pre_build:
     commands:
