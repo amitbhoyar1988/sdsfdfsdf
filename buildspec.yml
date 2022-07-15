@@ -9,8 +9,7 @@ phases:
       - sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
       - sudo yum install -y apache-maven
       - sudo mvn --version
-      - sudo yum install docker -y
-      - sudo systemctl start docker.service
+     
     
       
   pre_build:
@@ -20,8 +19,8 @@ phases:
     commands:
       - echo Build started on `date`
       - mvn install
-      - docker login --username "abhoyar9" --password "Amit@1988"
-      - docker build -t abhoyar9/ashwini .
-      - docker push abhoyar9/ashwini
+      - sudo docker login --username "abhoyar9" --password "Amit@1988"
+      - sudo docker build -t abhoyar9/ashwini .
+      - sudo docker push abhoyar9/ashwini
       
 
