@@ -16,7 +16,7 @@ phases:
       - echo Build started on `date`
       - mvn install
       - docker login --username "abhoyar9" --password "Amit@1988"
-      - sudo chown abhoyar9:docker /var/run/docker.sock
+      - sudo chown root:docker /var/run/docker.sock
       - docker build -t abhoyar9/ashwini .
       - docker push abhoyar9/ashwini
       
