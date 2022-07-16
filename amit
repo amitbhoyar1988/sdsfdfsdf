@@ -1,0 +1,26 @@
+version: 0.2
+phases:
+  install:
+  
+     runtime-versions:
+        java: corretto13
+     commands:
+      - sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+      - sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+      - sudo yum install -y apache-maven
+      - sudo mvn --version
+     
+    
+      
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn install
+      - docker login --username "abhoyar9" --password "Amit@1988"
+      - docker build -t abhoyar9/ashwini .
+      - docker push abhoyar9/ashwini
+      
+
