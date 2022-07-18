@@ -3,7 +3,7 @@ phases:
   install:
   
      runtime-versions:
-        java: corretto11
+        java: openjdk13
   
   pre_build:
     commands:
@@ -14,5 +14,5 @@ phases:
       - mvn install
       - docker login --username "abhoyar9" --password "Amit@1988"
       - docker build -t abhoyar9/ashwini .
-      - docker push abhoyar9/ashwini:latest 
+      - docker push abhoyar9/ashwini:latest && docker push abhoyar9/ashwini:$Build_Number
 
