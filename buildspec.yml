@@ -8,17 +8,16 @@ phases:
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
-      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - IMAGE_TAG=${COMMIT_HASH:=latest
+      
   build:
     commands:
       - echo Build started on `date`
       - mvn install
       - docker login --username "abhoyar9" --password "Amit@1988"
       - docker build -t abhoyar9/ashwini:latest .
-      - docker tag abhoyar9/ashwini:latest abhoyar9/ashwini:$IMAGE_TAG
+      
   post_build: 
     commands:
       - docker push abhoyar9/ashwini:latest 
-      - docker push abhoyar9/ashwini:$IMAGE_TAG
+      - docker push abhoyar9/ashwini:${Build_Number}
 
