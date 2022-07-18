@@ -15,6 +15,7 @@ phases:
       - mvn install
       - docker login --username "abhoyar9" --password "Amit@1988"
       - docker build -t abhoyar9/ashwini:latest .
+      - docker build -t abhoyar9/ashwini:${Build_Number} .
       
   post_build: 
     commands:
