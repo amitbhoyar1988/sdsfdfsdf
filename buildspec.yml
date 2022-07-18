@@ -13,6 +13,6 @@ phases:
       - echo Build started on `date`
       - mvn install
       - docker login --username "abhoyar9" --password "Amit@1988"
-      - docker build -t abhoyar9/ashwini . && docker build -t abhoyar9/ashvin:$BUILD_NUMBER .
+      - docker build -t abhoyar9/ashwini . && docker build -t abhoyar9/ashvin:$IMAGE_TAG .
       - docker push abhoyar9/ashwini:latest && docker push abhoyar9/ashwini:$Build_Number
 
