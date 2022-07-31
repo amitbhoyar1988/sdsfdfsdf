@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>deliziahr-query-service</artifactId>
+	<artifactId>amit-bhoyar</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>query-service</name>
 	<description>Query-Service</description>
